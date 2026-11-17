@@ -1,5 +1,11 @@
 # SmartCampus educational AI - team handoff
 
+This handoff is on the **Abdullah** branch. To download the correct version:
+
+```powershell
+git clone --branch Abdullah https://github.com/Mayaa722/Smart_Campus_Educational_Model.git
+```
+
 Start with [the notebook](SmartCampus/vscode/SmartCampus.ipynb). This portable
 edition reads our actual saved results; all live switches are **off** initially.
 The Streamlit app supports one uploaded PDF/PPTX at a time, a short summary,

@@ -1,6 +1,7 @@
 SMARTCAMPUS - CONTINUE ON ANOTHER DESKTOP
 
-1. Clone the team repository or extract its ZIP into a normal folder.
+1. Clone the Abdullah branch or extract that branch's ZIP into a normal folder:
+   git clone --branch Abdullah https://github.com/Mayaa722/Smart_Campus_Educational_Model.git
    Keep checkpoints/ intact.
 2. Install Python 3.12 and VS Code's Python/Jupyter extensions if needed.
 3. Open a terminal in the extracted folder and run:
@@ -21,7 +22,7 @@ Your own key is needed only for new live generation, not reading saved work.
 Do not delete request ledgers or mistake partial work for completed evaluation.
 
 TEAM GITHUB
-https://github.com/Mayaa722/Smart_Campus_Educational_Model
+https://github.com/Mayaa722/Smart_Campus_Educational_Model/tree/Abdullah
 
 To continue: clone that repository, follow the setup above, then review your
 changes, commit, and push with your own authorized GitHub account.
