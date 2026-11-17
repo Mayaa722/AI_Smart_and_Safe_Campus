@@ -1,0 +1,48 @@
+{
+  "version": "lecture_reference_checks_v1",
+  "author": "Assistant-authored from original PDFs before inspecting generated study materials; requires instructor validation.",
+  "coverage_definition": "For each predefined criterion: 2 = accurate explanation including the listed distinction/condition, 1 = mentioned accurately but essential explanation missing, 0 = missing or materially wrong. Score = sum / (2 * number of criteria). Report contradictions separately. The short summary is assessed for essential overview coverage, the full guide for detail; do not interpret their scores as interchangeable.",
+  "limitations": "A bounded development checklist, not every possible lecture concept, not student learning gain, and not a metric claimed by the paper. Source mistakes must be identified rather than copied unquestioningly.",
+  "iot": [
+    {"id":"i01","pages":[3,4],"criterion":"Distinguish LAN, MAN and WAN and identify the illustrated bus, ring, star, mesh and fully connected topologies without inventing links."},
+    {"id":"i02","pages":[14,15],"criterion":"Explain a protocol as rules/order of communication and client as initiator versus server as listener/responder."},
+    {"id":"i03","pages":[17,18],"criterion":"Explain OSI stack order, encapsulation and headers/trailers; do not treat a header as the application payload."},
+    {"id":"i04","pages":[19,21],"criterion":"Explain modularity benefits of layers and the physical layer's role in bits, signals and physical interfaces."},
+    {"id":"i05","pages":[23,24],"criterion":"Explain the low/high-frequency propagation tradeoffs shown and distinguish reflection, refraction, scattering and diffraction."},
+    {"id":"i06","pages":[26,27],"criterion":"Explain multipath/delay spread and distinguish amplitude, frequency and phase shift keying."},
+    {"id":"i07","pages":[28,31],"criterion":"Explain frames and link access/error handling; describe carrier sensing, collision detection and random backoff in the lecture's shared Ethernet example, without claiming all modern switched Ethernet has collisions."},
+    {"id":"i08","pages":[32,33],"criterion":"Explain Wi-Fi collision avoidance and the roles of RTS/CTS rather than copying Ethernet collision detection."},
+    {"id":"i09","pages":[34,35],"criterion":"Explain IPv4 network/host addressing and /24 as a 24-bit network mask; for 192.168.1.10/24 the network is 192.168.1.0."},
+    {"id":"i10","pages":[38,39],"criterion":"Distinguish routing/next hop from transport ports; IP identifies a host and a port identifies an application endpoint."},
+    {"id":"i11","pages":[45,46],"criterion":"Compare TCP's ordered reliable stream, sequencing, acknowledgements/retransmission and congestion/flow control with UDP's lower-overhead datagrams and lack of delivery guarantee."},
+    {"id":"i12","pages":[49,50],"criterion":"Trace HTTP message inside TCP segment inside IP packet inside Ethernet frame; distinguish client ephemeral port and server port 80 in the illustrated HTTP example."}
+  ],
+  "calculus": [
+    {"id":"c01","pages":[3,4],"criterion":"Give sinh and cosh exponential definitions, tanh=sinh/cosh and reciprocal definitions; coth and csch exclude x=0."},
+    {"id":"c02","pages":[5,6],"criterion":"Explain cosh(x)+sinh(x)=exp(x) and cosh(x)-sinh(x)=exp(-x) by substitution, not mere naming."},
+    {"id":"c03","pages":[7,8],"criterion":"Explain cosh even, sinh odd and tanh odd using substitution of -x."},
+    {"id":"c04","pages":[9,10],"criterion":"Correctly state cosh^2-sinh^2=1, 1-tanh^2=sech^2, coth^2-1=csch^2 and (1-tanh)/(1+tanh)=exp(-2x)."},
+    {"id":"c05","pages":[11,12],"criterion":"Include double-angle and addition/subtraction identities with correct hyperbolic plus/minus signs; cosh(2x)=cosh^2(x)+sinh^2(x)."},
+    {"id":"c06","pages":[13,14],"criterion":"Explain log/exponential simplification and cosh(ln(x))=(x^2+1)/(2x), with real-domain condition x>0."},
+    {"id":"c07","pages":[15,18],"criterion":"Correct signs for all six derivatives: sinh->cosh, cosh->sinh, tanh->sech^2, coth->-csch^2, sech->-sech*tanh, csch->-csch*coth."},
+    {"id":"c08","pages":[17,19],"criterion":"Explain quotient-rule proof of tanh derivative and multiply by the inner derivative under the chain rule."},
+    {"id":"c09","pages":[20,21],"criterion":"Explain product/quotient/chain application in worked derivatives; preserve grouping and source uncertainty when formulas are visually ambiguous."},
+    {"id":"c10","pages":[23,26],"criterion":"Graph/domain/range: cosh has minimum 1 at x=0, domain all reals, range [1,infinity); tanh domain all reals, range (-1,1) with asymptotes not included."},
+    {"id":"c11","pages":[27,29],"criterion":"Graph/domain/range: sech domain all reals, range (0,1]; csch domain and range real nonzero; coth domain real nonzero, range (-infinity,-1) union (1,infinity)."},
+    {"id":"c12","pages":[32,33],"criterion":"Cover the appendix proof and implicit differentiation: for y*coth(3x)=4x+y^6, y'=(4+3*y*csch(3x)^2)/(coth(3x)-6*y^5), where original equation and denominator are defined."}
+  ],
+  "software": [
+    {"id":"s01","pages":[3,6],"criterion":"Explain requirements engineering and user requirements for customers versus detailed system requirements for developers, with service/constraint distinction."},
+    {"id":"s02","pages":[8,10],"criterion":"Distinguish functional services/behaviours from non-functional properties/constraints and illustrate with MHC-PMS requirements."},
+    {"id":"s03","pages":[11,12],"criterion":"Explain ambiguous search interpretation, completeness (all required facilities) and consistency (no contradictions), including practical limits."},
+    {"id":"s04","pages":[15,16],"criterion":"Explain how non-functional requirements affect architecture and distinguish product, organisational and external requirements."},
+    {"id":"s05","pages":[18,20],"criterion":"Distinguish a vague usability goal from a measurable testable requirement, including learning time/error rates or other source metrics."},
+    {"id":"s06","pages":[21,23],"criterion":"Explain domain-imposed requirements and domain terminology/implicit knowledge problems without treating an opaque formula as universally applicable."},
+    {"id":"s07","pages":[25,27],"criterion":"Explain requirements document purpose as what the system must do, variability by system/process, and limits of minimal agile documentation for critical systems."},
+    {"id":"s08","pages":[28,29],"criterion":"Distinguish user requirements definition, system requirements specification, models and evolution in the document structure."},
+    {"id":"s09","pages":[30,32],"criterion":"Compare natural language, structured descriptions, graphical and mathematical specifications; explain shall/should, clarity, confusion and amalgamation."},
+    {"id":"s10","pages":[34,35],"criterion":"Explain form-based specification fields including inputs/outputs, pre/postconditions, actions and side effects."},
+    {"id":"s11","pages":[38,39],"criterion":"Explain tabular specification of alternative condition/action cases in the insulin-pump example; do not turn the academic example into medical advice."},
+    {"id":"s12","pages":[40,45],"criterion":"Explain elicitation, specification and validation, scenarios with normal/exception flows, and use cases identifying actors and interactions."}
+  ]
+}

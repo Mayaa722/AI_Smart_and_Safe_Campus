@@ -1,0 +1,17 @@
+{
+  "job_name": "hough_full_v1",
+  "doc_id": "6b0bc2554460",
+  "pages_per_batch": 8,
+  "max_requests": 32,
+  "max_reserved_tokens": 1200000,
+  "max_requests_per_minute": 2,
+  "max_input_chars": 48000,
+  "max_output_tokens": 6000,
+  "max_image_bytes": 18000000,
+  "mcq_count": 8,
+  "max_attempts_per_stage": 2,
+  "retry_delay_seconds": 35,
+  "chat_max_requests": 20,
+  "chat_max_reserved_tokens": 350000,
+  "chat_max_output_tokens": 3000
+}

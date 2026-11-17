@@ -1,0 +1,27 @@
+{
+  "ragas_version": "0.4.3",
+  "judge_model": "gemini-3.5-flash-lite",
+  "embedding_model": "gemini-embedding-001",
+  "judge_temperature": 0.0,
+  "max_output_tokens": 3000,
+  "answer_relevancy_strictness": 3,
+  "max_network_requests": 48,
+  "max_generation_requests_per_minute": 2,
+  "max_reserved_tokens": 480000,
+  "max_prompt_chars": 24000,
+  "default_sample_ids": [
+    "full_lecture_noise"
+  ],
+  "metrics": [
+    "faithfulness",
+    "context_precision",
+    "context_recall",
+    "answer_relevancy"
+  ],
+  "schema_mode": "google_native",
+  "read_metric_cache_dirs": [
+    "D:\\Graduation Project\\SmartCampus\\vscode\\run\\full_lectures\\hough_full_v1\\native_judge_runtime\\metric_cache"
+  ],
+  "max_transient_retries": 1,
+  "retry_delay_seconds": 35
+}

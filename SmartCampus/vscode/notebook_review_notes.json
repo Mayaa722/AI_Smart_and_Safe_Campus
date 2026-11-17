@@ -1,0 +1,58 @@
+[
+  {
+    "source_ids": [
+      "6b0bc2554460:p25"
+    ],
+    "kind": "source_typo",
+    "title": "Double-intercept derivation: printed sign typo",
+    "explanation": "The original slide prints ya + yx - ba + bx = -yx. Expanding (y-b)(a-x) = -xy instead gives ay - xy - ab + bx = -xy. Cancelling -xy yields ay + bx = ab and therefore x/a + y/b = 1 (when a and b are nonzero). The final intercept equation is correct; the intermediate printed plus sign is a source typo, not a valid algebra step."
+  },
+  {
+    "source_ids": [
+      "6b0bc2554460:p55"
+    ],
+    "kind": "notation_clarification",
+    "title": "Signed rho versus geometric distance",
+    "explanation": "In a signed-rho convention, rho may be negative; the nonnegative perpendicular distance is abs(rho). The sign depends on the chosen oriented normal. Keep the theta range and rho convention consistent: a half-turn theta range pairs with signed rho, while a full-turn range can use nonnegative rho."
+  },
+  {
+    "source_ids": [
+      "6b0bc2554460:p57",
+      "6b0bc2554460:p58",
+      "6b0bc2554460:p59"
+    ],
+    "kind": "source_label_inconsistency",
+    "title": "The sinusoidal plots use normal-form Hough space",
+    "explanation": "The slides retain a y=mx+b label, but the plotted curves are sinusoids with an angular horizontal axis. A fixed image point gives a straight line b=y-mx in (m,b) space, and a sinusoid rho=x*cos(theta)+y*sin(theta) in (theta,rho) space. The generated wording 'sinusoidal curves using y=mx+b' conflates the stale label with the plot. Preserve the original slide and use this distinction when studying the plots."
+  },
+  {
+    "source_ids": [
+      "6b0bc2554460:p20"
+    ],
+    "kind": "generated_note_clarification",
+    "title": "An unsuitable objective is different from an incorrect optimizer",
+    "explanation": "The horizontal line illustrates a limitation of minimizing vertical squared residuals for a near-vertical point cloud. Calling it an 'incorrect minimum' is misleading: it can minimize the stated objective while failing to represent the intended geometric line. This is a modeling/parameterization issue."
+  },
+  {
+    "source_ids": [
+      "6b0bc2554460:p73",
+      "6b0bc2554460:p74",
+      "6b0bc2554460:p75",
+      "6b0bc2554460:p76",
+      "6b0bc2554460:p77"
+    ],
+    "kind": "generated_note_clarification",
+    "title": "Known-radius intersections estimate the center",
+    "explanation": "On pages 73–76 the radius is already fixed, so the intersection identifies center parameters (a,b), not an independently estimated radius. Radius becomes an additional unknown parameter in the three-dimensional accumulator on page 77."
+  },
+  {
+    "source_ids": [
+      "6b0bc2554460:p26",
+      "6b0bc2554460:p44",
+      "6b0bc2554460:p60"
+    ],
+    "kind": "additional_teaching",
+    "title": "Complete the line-voting worked example",
+    "explanation": "Additional teaching: for points (1,2) and (3,4), m=(4-2)/(3-1)=1 and b=2-1*1=1, so y=x+1. In normal form choose theta=135 degrees (3*pi/4): cos(theta)=-1/sqrt(2), sin(theta)=1/sqrt(2). Both points then give rho=(y-x)/sqrt(2)=1/sqrt(2). Their voting curves therefore meet at this line parameter. These numeric inputs are a new teaching example, not values claimed to appear in the lecture."
+  }
+]

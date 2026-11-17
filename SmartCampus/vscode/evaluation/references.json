@@ -1,0 +1,37 @@
+[
+  {
+    "id": "mcq_edges_vote", "task": "mcq", "item_index": 1, "generation_id": "40f43aa575d44c19a7e09372503801bd",
+    "reference": "In the Hough transform, edges vote for the possible models.",
+    "reference_source_ids": ["6b0bc2554460:p28"], "image_required": false
+  },
+  {
+    "id": "mcq_hough_properties", "task": "mcq", "item_index": 2, "generation_id": "40f43aa575d44c19a7e09372503801bd",
+    "reference": "The Hough transform is a generic framework for detecting a parametric model. Edges need not be connected, and lines may be occluded.",
+    "reference_source_ids": ["6b0bc2554460:p28"], "image_required": false
+  },
+  {
+    "id": "mcq_normal_form", "task": "mcq", "item_index": 0, "generation_id": "40f43aa575d44c19a7e09372503801bd",
+    "reference": "The normal form equation is x*cos(theta) + y*sin(theta) = rho.",
+    "reference_source_ids": ["6b0bc2554460:p26"], "image_required": true
+  },
+  {
+    "id": "chat_rho_theta", "task": "chat_direct", "generation_id": "6dcad5a893f24291af7d396811587253",
+    "reference": "Rho is the perpendicular distance from the origin to the line. Theta is the angle of the normal measured from the x-axis, rather than the direction along the line.",
+    "reference_source_ids": ["6b0bc2554460:p26"], "image_required": true
+  },
+  {
+    "id": "hint_theta_zero", "task": "chat_hint", "generation_id": "28982747c66548b295f60046998977eb",
+    "reference": "A useful hint asks which way the normal points when theta is zero and how far it lies from the origin when rho is three. It should guide the student without stating the final line equation.",
+    "reference_source_ids": ["6b0bc2554460:p26"], "image_required": true
+  },
+  {
+    "id": "summary_normal_form_hough", "task": "summary_section", "generation_id": "4305e6db5ac7479e94999e13768d7b2f",
+    "reference": "The normal form x*cos(theta) + y*sin(theta) = rho follows from cos(theta)=rho/a and sin(theta)=rho/b in the intercept equation x/a+y/b=1. Hough is a generic parametric model detector in which edges vote for possible models, including disconnected edges and occluded lines.",
+    "reference_source_ids": ["6b0bc2554460:p26", "6b0bc2554460:p28"], "image_required": true
+  },
+  {
+    "id": "explanation_normal_form_hough", "task": "explanation", "generation_id": "a0dd5f3912f045ed9ed3a163efb14d0a",
+    "reference": "Rho is the perpendicular distance from the origin and theta is the normal's angle from the x-axis in x*cos(theta)+y*sin(theta)=rho. Edges vote for possible models; connectivity and complete visibility are not required. Additional teaching: theta=0 and rho=2 gives x=2.",
+    "reference_source_ids": ["6b0bc2554460:p26", "6b0bc2554460:p28"], "image_required": true
+  }
+]

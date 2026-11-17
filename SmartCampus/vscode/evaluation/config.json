@@ -1,0 +1,23 @@
+{
+  "ragas_version": "0.4.3",
+  "judge_model": "gemini-3.5-flash-lite",
+  "embedding_model": "gemini-embedding-001",
+  "judge_temperature": 0.0,
+  "max_output_tokens": 3000,
+  "answer_relevancy_strictness": 3,
+  "max_network_requests": 20,
+  "max_generation_requests_per_minute": 2,
+  "max_reserved_tokens": 80000,
+  "max_prompt_chars": 24000,
+  "default_sample_ids": [
+    "mcq_edges_vote"
+  ],
+  "metrics": [
+    "faithfulness",
+    "context_precision",
+    "context_recall",
+    "answer_relevancy"
+  ],
+  "max_transient_retries": 0,
+  "retry_delay_seconds": 35
+}
