@@ -1,9 +1,0 @@
-# Keep evaluation separate from the working tutor kernel.
-ragas==0.4.3
-langchain==0.3.27
-langchain-community==0.3.31
-langchain-core==0.3.79
-langchain-openai==0.3.35
-langchain-text-splitters==0.3.11
-instructor==1.11.3
-requests==2.34.2

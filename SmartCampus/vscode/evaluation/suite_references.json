@@ -1,5 +1,0 @@
-[
-  {"id":"suite_edge_voting","question":"According to this lecture, what is the key idea of the Hough transform? State only what edges do for possible models, without extra examples.","reference":"Edges vote for the possible models.","source_ids":["6b0bc2554460:p28"]},
-  {"id":"suite_unknown_radius","question":"According to the lecture, how many dimensions does circle Hough space require when the radius is unknown, and what accumulator parameters are used? Keep the answer to that point.","reference":"An unknown circle radius requires a three-dimensional accumulator over the two center coordinates and the radius, A(a,b,r).","source_ids":["6b0bc2554460:p77"]},
-  {"id":"suite_gradient_vote","question":"According to the lecture's gradient-information slide, when the circle radius is known and gradient information is used, how many points in the accumulator need to be incremented? Answer without equations or additional derivations.","reference":"Only one point in the accumulator needs to be incremented.","source_ids":["6b0bc2554460:p78"]}
-]
