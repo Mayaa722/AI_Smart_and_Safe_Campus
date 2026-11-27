@@ -1,0 +1,78 @@
+{
+  "_note": "Model IDs and free-tier limits change often. Check each provider's limits page for YOUR account and edit rpm/rpd/tpm before running. Limits here are deliberately conservative.",
+
+  "gemini-3.5-flash-lite": {
+    "provider": "gemini", "model": "gemini-3.5-flash-lite", "key_env": "GEMINI_API_KEY",
+    "vision": true, "schema_mode": "json_schema",
+    "rpm": 10, "rpd": 500, "tpm": 200000, "max_input_tokens": 200000, "max_output_tokens": 4096
+  },
+  "gemini-3.1-flash-lite": {
+    "provider": "gemini", "model": "gemini-3.1-flash-lite", "key_env": "GEMINI_API_KEY",
+    "vision": true, "schema_mode": "json_schema",
+    "rpm": 10, "rpd": 500, "tpm": 200000, "max_input_tokens": 200000, "max_output_tokens": 4096
+  },
+  "groq-gpt-oss-120b": {
+    "provider": "openai_compat", "model": "openai/gpt-oss-120b", "key_env": "GROQ_API_KEY",
+    "base_url": "https://api.groq.com/openai/v1",
+    "vision": false, "schema_mode": "json_schema",
+    "_note_extra_body": "Low reasoning effort: most gpt-oss output tokens are hidden reasoning, and the free tier allows about 200k tokens per day.",
+    "extra_body": {"reasoning_effort": "low"},
+    "_note_max_output": "4096: at 2048 the claim list of a long summary piece was cut off (finish reason: length). Does not shrink the checker's input budget, which the Qwen backup already limits.",
+    "rpm": 30, "rpd": 1000, "tpm": 8000, "max_input_tokens": 6000, "max_output_tokens": 4096
+  },
+  "groq-gpt-oss-120b-key2": {
+    "_note": "Backup checker: the same model on the second Groq key (separate 200k tokens/day), so scores stay comparable. Replaced Qwen, which Groq now limits to 1000 output tokens per minute.",
+    "provider": "openai_compat", "model": "openai/gpt-oss-120b", "key_env": "NEW_GROQ_API_KEY",
+    "base_url": "https://api.groq.com/openai/v1",
+    "vision": false, "schema_mode": "json_schema",
+    "extra_body": {"reasoning_effort": "low"},
+    "rpm": 30, "rpd": 1000, "tpm": 8000, "max_input_tokens": 6000, "max_output_tokens": 4096
+  },
+  "groq-qwen3.8-27b": {
+    "_note_otpm": "2026-11-26: Groq now limits this model to 1000 output tokens per minute, so requests with max_tokens 4096 are refused. Not used as a backup any more.",
+    "_note": "Backup checker (Qwen family): separate Groq daily limit, used when gpt-oss-120b's limit is reached.",
+    "provider": "openai_compat", "model": "qwen/qwen3.8-27b", "key_env": "GROQ_API_KEY",
+    "base_url": "https://api.groq.com/openai/v1",
+    "vision": false, "schema_mode": "json_schema",
+    "_note_temperature": "Fixed temperature: at 0 Qwen falls into repetition loops that break the JSON output.",
+    "temperature": 0.3,
+    "_note_max_output": "4096: at 2048 some item reviews were cut off (finish reason: length).",
+    "rpm": 30, "rpd": 1000, "tpm": 8000, "max_input_tokens": 6000, "max_output_tokens": 4096
+  },
+  "mistral-small": {
+    "provider": "openai_compat", "model": "mistral-small-latest", "key_env": "MISTRAL_API_KEY",
+    "base_url": "https://api.mistral.ai/v1",
+    "vision": true, "schema_mode": "json_schema",
+    "rpm": 30, "rpd": 2000, "tpm": 250000, "max_input_tokens": 100000, "max_output_tokens": 4096
+  },
+  "github-gpt-4.1-mini": {
+    "provider": "openai_compat", "model": "openai/gpt-4.1-mini", "key_env": "GITHUB_TOKEN",
+    "base_url": "https://models.github.ai/inference",
+    "vision": true, "schema_mode": "json_schema",
+    "rpm": 15, "rpd": 150, "tpm": 40000, "max_input_tokens": 7500, "max_output_tokens": 4000
+  },
+  "cerebras-gpt-oss-120b": {
+    "provider": "openai_compat", "model": "gpt-oss-120b", "key_env": "CEREBRAS_API_KEY",
+    "base_url": "https://api.cerebras.ai/v1",
+    "vision": false, "schema_mode": "json_schema",
+    "rpm": 30, "rpd": 1000, "tpm": 60000, "max_input_tokens": 60000, "max_output_tokens": 4096
+  },
+  "openrouter-nemotron-super": {
+    "_note": "NVIDIA family (third family next to Gemini and gpt-oss). OpenRouter free models: 50 requests per day without credits.",
+    "provider": "openai_compat", "model": "nvidia/nemotron-3.5-super-vl:free", "key_env": "OPENROUTER_API_KEY",
+    "base_url": "https://openrouter.ai/api/v1",
+    "vision": true, "schema_mode": "json_schema",
+    "_note_extra_body": "Low reasoning: with default reasoning it used up to ~2k hidden tokens and sometimes hit the output limit.",
+    "extra_body": {"reasoning": {"effort": "low"}},
+    "_note_max_output": "8192: reasoning tokens count toward the output limit; at 4096 some checks were cut off (finish reason: length).",
+    "rpm": 15, "rpd": 50, "tpm": 1000000, "max_input_tokens": 100000, "max_output_tokens": 8192
+  },
+  "openrouter-nemotron-super-key2": {
+    "_note": "Same model and settings as openrouter-nemotron-super, second OpenRouter key; used only after the first key's daily limit.",
+    "provider": "openai_compat", "model": "nvidia/nemotron-3.5-super-vl:free", "key_env": "NEW_OPENROUTER_API_KEY",
+    "base_url": "https://openrouter.ai/api/v1",
+    "vision": true, "schema_mode": "json_schema",
+    "extra_body": {"reasoning": {"effort": "low"}},
+    "rpm": 15, "rpd": 50, "tpm": 1000000, "max_input_tokens": 100000, "max_output_tokens": 8192
+  }
+}

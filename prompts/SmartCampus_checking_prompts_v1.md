@@ -8,7 +8,8 @@ Status: DRAFT for review. These prompts serve two purposes:
 - **One fixed version per checker.** Unlike the feature prompts, a judge must not change between benchmark runs, or the scores are not comparable.
 - **Different model family from the generator.** Example: if Gemini generated it, a non-Google model checks it.
 - **For the benchmark, use one independent judge model for every arm**, ideally a family that is neither a generator nor the in-app checker.
-- Temperature 0. Structured JSON output.
+- Temperature 0. Structured JSON output. The exact schemas used in code are in `smartcampus/schemas.py`
+  (strict structured-output modes need fixed keys, so per-option results are lists and check values are strings).
 - Run the checker on the **same evidence the generator received**, plus the slides cited in the output.
 - Validate 5–10% of judgments by hand to measure judge–human agreement.
 
@@ -218,7 +219,7 @@ Assess:
 {
   "answerable_from_cited": true,
   "explanation_correct": {"value": true, "reason": "string"},
-  "distractor_quality": {"A": {"label": "plausible | weak | also_correct | unclear", "reason": "string"}},
+  "distractor_quality": [ {"option": "A | B | C | D", "label": "plausible | weak | also_correct | unclear", "reason": "string"} ],
   "cues": ["string"],
   "stem_quality": {"label": "clear | ambiguous | negatively_worded", "reason": "string"},
   "bloom_level_actual": "remember | understand | apply | analyze | evaluate",
@@ -257,7 +258,7 @@ Answer each check with true / false / "not_applicable", plus a short reason when
 ```json
 {
   "checks": {
-    "solution_withheld": {"value": true, "reason": ""},
+    "solution_withheld": {"value": "true | false | not_applicable", "reason": ""},
     "one_question": {"value": "not_applicable", "reason": ""},
     "attempt_addressed": {"value": "not_applicable", "reason": ""},
     "abstained_correctly": {"value": true, "reason": ""},

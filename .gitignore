@@ -1,0 +1,13 @@
+# Secrets and local environment
+.env
+.venv*/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Generated workspace (caches, indexes, page images, model outputs)
+runs/
+
+# Lecture files are course material: keep them local, not in git
+data/lectures/*
+!data/lectures/README.md

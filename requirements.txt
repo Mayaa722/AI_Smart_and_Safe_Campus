@@ -1,0 +1,14 @@
+# Core
+pymupdf>=1.26
+python-pptx>=1.0
+python-docx>=1.1
+requests>=2.32
+jsonschema>=4.23
+numpy>=2.0
+# Retrieval
+chromadb>=1.0
+sentence-transformers>=5.0
+# UI
+streamlit>=1.50
+# Tests
+pytest>=8.0

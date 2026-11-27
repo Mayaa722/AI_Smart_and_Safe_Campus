@@ -1,0 +1,39 @@
+{
+  "_note": "Retrieval ablation ladder (step 15, metric M1). Each entry overrides settings.retrieval. Run all on the same test set.",
+
+  "B0_lexical_slides": {
+    "_about": "Approximation of the teammate's design: lexical search only, one chunk per slide, slide notes included.",
+    "use_dense": false, "use_bm25": true, "use_reranker": false, "use_descriptions": true,
+    "use_context_header": false, "chunking": "slide", "neighbours": 0, "top_k": 4, "gate_enabled": false
+  },
+  "B1_paper": {
+    "_about": "The paper's text-only setup: 512-char chunks, embeddings + reranker, top-K = 10 chunks.",
+    "use_dense": true, "use_bm25": false, "use_reranker": true, "use_descriptions": false,
+    "use_context_header": false, "chunking": "flat", "neighbours": 0, "top_k": 10, "gate_enabled": false
+  },
+  "P1_descriptions": {
+    "use_dense": true, "use_bm25": false, "use_reranker": true, "use_descriptions": true,
+    "use_context_header": false, "chunking": "flat", "neighbours": 0, "top_k": 10, "gate_enabled": false
+  },
+  "P2_context_header": {
+    "use_dense": true, "use_bm25": false, "use_reranker": true, "use_descriptions": true,
+    "use_context_header": true, "chunking": "flat", "neighbours": 0, "top_k": 10, "gate_enabled": false
+  },
+  "P3_hybrid": {
+    "use_dense": true, "use_bm25": true, "use_reranker": true, "use_descriptions": true,
+    "use_context_header": true, "chunking": "flat", "neighbours": 0, "top_k": 10, "gate_enabled": false
+  },
+  "P4_small_to_big": {
+    "use_dense": true, "use_bm25": true, "use_reranker": true, "use_descriptions": true,
+    "use_context_header": true, "chunking": "small_to_big", "neighbours": 1, "top_k": 6, "gate_enabled": false
+  },
+  "P5_k4":  {"use_dense": true, "use_bm25": true, "use_reranker": true, "use_descriptions": true, "use_context_header": true, "chunking": "small_to_big", "neighbours": 1, "top_k": 4,  "gate_enabled": true},
+  "P5_k6":  {"use_dense": true, "use_bm25": true, "use_reranker": true, "use_descriptions": true, "use_context_header": true, "chunking": "small_to_big", "neighbours": 1, "top_k": 6,  "gate_enabled": true},
+  "P5_k8":  {"use_dense": true, "use_bm25": true, "use_reranker": true, "use_descriptions": true, "use_context_header": true, "chunking": "small_to_big", "neighbours": 1, "top_k": 8,  "gate_enabled": true},
+  "P5_k10": {"use_dense": true, "use_bm25": true, "use_reranker": true, "use_descriptions": true, "use_context_header": true, "chunking": "small_to_big", "neighbours": 1, "top_k": 10, "gate_enabled": true},
+  "P6_no_reranker": {
+    "_about": "Checks whether the reranker is worth its delay.",
+    "use_dense": true, "use_bm25": true, "use_reranker": false, "use_descriptions": true,
+    "use_context_header": true, "chunking": "small_to_big", "neighbours": 1, "top_k": 6, "gate_enabled": true
+  }
+}

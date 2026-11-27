@@ -18,6 +18,7 @@ Status: DRAFT for review. Used in **step 13 (Repair)**, only for items flagged i
 | R1 | Explanation repair | C1 (contradicted or unsupported claims, wrong citations); C5 in benchmark runs (solution leaked, mode not followed) |
 | R2 | Summary repair | C1 (contradicted or unsupported claims, wrong citations); code (outline misses content slides) |
 | R3 | Quiz question repair | C3 (key not confirmed, several or no correct answers, not answerable); C4 (verdict "revise") |
+| R4 | Replacement quiz question | A question is withheld after R3 and its re-check (not a repair: a new question) |
 
 ## Shared repair output field
 Every repaired output contains the feature's normal schema **plus**:
@@ -135,3 +136,30 @@ ALL QUIZ RULES STILL APPLY
 ```
 
 **After R3:** the repaired item goes through C3 (both blind solvers) and C4 again. If it still fails, it is withheld from students until a teacher approves or edits it. A quiz with withheld items is shown with fewer questions, and the student is told how many.
+
+---
+
+## R4. Replacement quiz question
+
+Used once per withheld question, so the quiz keeps its requested length. The withheld question is **not** changed again (the one-repair rule stays); R4 writes a **new** question from the same slides. The replacement is treated like any other question: C3 (both blind solvers) and C4, one R3 repair if flagged, and a re-check. If it is still flagged, it is withheld too, and no further replacement is tried.
+
+**Extra input:**
+```
+<withheld_question>{the withheld item, as JSON}</withheld_question>
+<withheld_reasons>[ "why the final check rejected it", ... ]</withheld_reasons>
+<other_stems>[ "every other question in the quiz", ... ]</other_stems>
+```
+
+```
+TASK: The question in <withheld_question> was withheld after one repair because of <withheld_reasons>. Write ONE NEW multiple-choice question from the slides in <lecture_evidence> to take its place.
+
+- Prefer an important concept from these slides that no stem in <other_stems> already tests. Do not repeat or paraphrase any stem in <other_stems> or the withheld question.
+- Avoid the problems in <withheld_reasons>. In particular, every wrong option must be judged wrong by the slides you cite, so cite every slide needed to judge all four options.
+- If no new question can be written from these slides without duplicating <other_stems>, return your best attempt and record "removed" with the reason; it is then dropped.
+
+ALL QUIZ RULES STILL APPLY
+- Exactly 4 options and one correct answer; positively worded stem; parallel, similar-length options; no all/none of the above, "both A and B", absurd options or absolutes used only in wrong options; no slide ids in the stem or options.
+- explanation with [id] citations; distractor_rationales for each wrong option, in option order, skipping the key; bloom_level (the level actually required) and difficulty.
+- In version B, also return its blueprint entry (key_fact_quote must be an exact quote that determines the key).
+- repair_notes: exactly one entry with finding "withheld question" and action "replaced" (or "removed").
+```

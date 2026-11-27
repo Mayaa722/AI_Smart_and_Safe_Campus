@@ -1,0 +1,15 @@
+{
+  "lecture_file": "REPLACE_WITH_FILE_NAME.pdf",
+  "lecture_name": "REPLACE WITH LECTURE TITLE",
+  "subject": "stem",
+  "questions": [
+    {"id": "q01", "question": "A question using the slide's own words", "type": "keyword", "gold_pages": [1],
+     "reference_answer": "", "key_points": [], "mode": "direct"},
+    {"id": "q02", "question": "The same idea asked in different words", "type": "paraphrase", "gold_pages": [1]},
+    {"id": "q03", "question": "A question whose answer is in a diagram", "type": "visual", "gold_pages": [1]},
+    {"id": "q04", "question": "and why is that?", "type": "followup", "gold_pages": [1],
+     "history": [{"role": "student", "content": "An earlier question"}, {"role": "tutor", "content": "The earlier answer"}]},
+    {"id": "q05", "question": "What is X, and how does it differ from Y?", "type": "multi", "gold_pages": [1, 2]},
+    {"id": "q06", "question": "A question the lecture does not cover", "type": "out_of_scope", "gold_pages": []}
+  ]
+}
